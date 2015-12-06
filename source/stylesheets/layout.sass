@@ -1,0 +1,149 @@
+@import 'bootstrap/mixins'
+@import 'variables'
+
+$shadow-color: rgba(#000, .5)
+
+body
+  position: absolute
+  height: 100%
+  width: 100%
+  padding: 0
+  background: url(image_path('background.jpg')) no-repeat top center fixed
+  @media (min-width: $screen-md-min)
+    background-position: center
+    background-size: cover
+  font-weight: 400
+  -webkit-font-smoothing: antialiased
+  
+  
+  h1, h2, h3  
+    font-family: 'Raleway', sans-serif
+    
+  #banner
+    height: 100%
+    width: 100%
+    overflow: hidden
+    @media (min-width: $screen-md-min)
+      background: url(image_path('bg_pattern.png'))
+    
+    #banner-text
+      position: absolute
+      top: 38.2%
+      margin-top: -100px
+      text-align: center
+      
+      left: 50%
+      width: 320px
+      margin-left: -160px
+      
+      @media (min-width: $screen-md-min)
+        position: fixed
+        top: 160px
+        margin-top: 0
+        width: 600px
+        margin-left: -300px
+    
+      h1, h2
+        margin: 0
+        padding: 20px 0
+        line-height: 1
+        color: #000
+        text-shadow: 1px 1px rgba(255,255,255,0.05), -1px 1px rgba(255,255,255,0.05), 1px -1px rgba(255,255,255,0.05), -1px -1px rgba(255,255,255,0.05)
+      h1
+        font-weight: 300
+        font-size: 45px
+        @media (min-width: $screen-md-min)
+          font-weight: 100
+          font-size: 90px
+        text-transform: uppercase
+        position: relative
+        border-bottom: 1px solid #000
+        
+      
+      h2
+        font-weight: 300
+        font-size: 18px
+        @media (min-width: $screen-md-min)
+          font-size: 30px
+        
+  #scroll-down
+    position: absolute
+    @media (min-width: $screen-md-min)
+      position: fixed
+    bottom: 15px
+    height: 30px
+    width: 30px
+    margin-left: -15px
+    left: 50%
+    
+    &:before, &:after
+      content: ''
+      position: absolute
+      top: 0
+      bottom: 0
+      width: 2px
+      background-color: #000
+      @include box-shadow(1px 1px rgba(255,255,255,0.05), -1px 1px rgba(255,255,255,0.05), 1px -1px rgba(255,255,255,0.05), -1px -1px rgba(255,255,255,0.05))
+    &:before
+      right: 4px
+      @include rotate(45deg)
+    &:after
+      left: 4px
+      @include rotate(-45deg)
+  #content
+    @include box-shadow(0 0 20px $shadow-color)
+    background: #000
+    padding: 0 10px
+    font-size: 16px
+    @media (min-width: $screen-md-min)
+      font-size: $font-size-base
+      padding: 0
+      background: rgba(#000,.9)
+    position: relative
+    z-index: 10
+    
+    .section
+      margin-bottom: 10px
+      @media (min-width: $screen-md-min)
+        margin-bottom: 60px
+      font-weight: 300
+      
+      h3
+        text-transform: uppercase
+        font-size: 30px
+        font-weight: 300
+        @media (min-width: $screen-md-min)
+          font-size: 45px
+          font-weight: 100
+        margin-top: 30px
+        margin-bottom: 15px
+        line-height: 1
+      
+      .img-container
+        margin-bottom: $grid-gutter-width
+              
+  footer
+    padding: 0 20px
+    background-color: rgba(#000,.95)
+    .media-links
+      position: relative
+      z-index: 10
+      margin: 0
+      font-size: 24px
+      @media (min-width: $screen-md-min)
+        font-size: 40px
+      line-height: 1
+      text-align: center
+      padding: 10px 0
+      li
+        line-height: 1
+        display: inline-block
+        a
+          color: #fff
+          opacity: 0.3
+          @include transition(opacity 0.2s linear)
+        a:hover
+          text-decoration: none
+          opacity: 1
+      li + li
+        margin-left: 20px
