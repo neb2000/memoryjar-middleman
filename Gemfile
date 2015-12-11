@@ -9,5 +9,8 @@ gem 'bootstrap-sass'
 gem 'font-awesome-middleman'
 gem 'middleman-google-analytics'
 
+gem 'capistrano', require: false
+gem 'capistrano-middleman', require: false
+
 # Live-reloading plugin
 gem 'middleman-livereload', '~> 3.1.0'
