@@ -93,31 +93,33 @@ body
       
   #content
     @include box-shadow(0 0 20px $shadow-color)
-    background: inherit
+    background: #000
     padding: 0 10px
     font-size: 16px
     position: relative
     overflow: hidden
     
-    &:before, &:after
-      content: ''
-      position: absolute
-      z-index: -1
-      
-    &:before
+    @media (min-width: $screen-md-min)
       background: inherit
-      top: -$blur-radius
-      right: -$blur-radius
-      bottom: -$blur-radius
-      left: -$blur-radius
-      filter: blur($blur-radius)
+      &:before, &:after
+        content: ''
+        position: absolute
+        z-index: -1
       
-    &:after
-      top: 0
-      right: 0
-      bottom: 0
-      left: 0
-      background-color: rgba(0,0,0,.6)
+      &:before
+        background: inherit
+        top: -$blur-radius
+        right: 0
+        bottom: 0
+        left: -$blur-radius
+        filter: blur($blur-radius)
+
+      &:after
+        top: 0
+        right: 0
+        bottom: 0
+        left: 0
+        background-color: rgba(0,0,0,.7)
     
     @media (min-width: $screen-md-min)
       font-size: $font-size-base
