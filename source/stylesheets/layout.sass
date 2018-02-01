@@ -2,6 +2,7 @@
 @import 'variables'
 
 $shadow-color: rgba(#000, .5)
+$blur-radius: 10px
 
 body
   position: absolute
@@ -89,15 +90,41 @@ body
     &:after
       left: 4px
       @include rotate(-45deg)
+      
   #content
     @include box-shadow(0 0 20px $shadow-color)
     background: #000
     padding: 0 10px
     font-size: 16px
+    position: relative
+    overflow: hidden
+    
+    @media (min-width: $screen-md-min)
+      background: inherit
+      &:before, &:after
+        content: ''
+        position: absolute
+        z-index: -1
+      
+      &:before
+        background: inherit
+        top: -$blur-radius
+        right: 0
+        bottom: 0
+        left: -$blur-radius
+        filter: blur($blur-radius)
+
+      &:after
+        top: 0
+        right: 0
+        bottom: 0
+        left: 0
+        background-color: rgba(0,0,0,.7)
+    
     @media (min-width: $screen-md-min)
       font-size: $font-size-base
       padding: 0
-      background: rgba(#000,.9)
+      
     @media (min-width: $screen-lg-min)
       font-size: $font-size-base * 1.4
     position: relative
