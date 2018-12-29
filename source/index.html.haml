@@ -2,9 +2,9 @@
 #banner
   #banner-text
     %h1 Memory Jar
-  
+
     %h2 Photography and web development
-    
+
   %a#scroll-down.scroll{ href: '#content' }
 
 #content
@@ -18,7 +18,7 @@
           %p I&apos;m currently working for #{link_to 'epiGenesys', url_for('http://www.epigenesys.co.uk'), title: 'epiGenesys - a University of Sheffield company', target: '_blank'} - a University of Sheffield company. I specialise in Ruby on Rails, jQuery, CSS and PostgresSQL.
           %p When I&apos;m free, I enjoy painting, travel around the country and take photos. You may have a look at my work in the profolio section or on my #{link_to 'Flickr page', url_for('https://www.flickr.com/photos/neb2000/'), target: '_blank'}.
           %p If you find yourself in need of any of my skills, please contact me via #{mail_to 'nebaries@gmail.com', 'e-mail'}, or any of the social media listed at the bottom of the page.
-          
+
     #portfolio-photos.section
       %h3 Portfolio - Photos
       .row
@@ -27,10 +27,17 @@
             .img-container= image_tag "portfolio/#{index}.jpg", class: 'img-responsive'
 
 
+    #portfolio-drawings.section
+      %h3 Portfolio - Drawings
+      .row
+        - (1..6).each do |index|
+          .col-md-4
+            .img-container= image_tag "drawings/#{index}.jpg", class: 'img-responsive'
+
     #portfolio-paintings.section
       %h3 Portfolio - Paintings
       .row
-        - (1..9).each do |index|
+        - (1..6).each do |index|
           .col-md-4
             .img-container= image_tag "paintings/#{index}.jpg", class: 'img-responsive'
 
