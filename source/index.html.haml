@@ -34,12 +34,12 @@
           .col-md-4
             .img-container= image_tag "drawings/#{index}.jpg", class: 'img-responsive'
 
-    #portfolio-paintings.section
-      %h3 Portfolio - Paintings
-      .row
-        - (1..6).each do |index|
-          .col-md-4
-            .img-container= image_tag "paintings/#{index}.jpg", class: 'img-responsive'
+    -# #portfolio-paintings.section
+    -#   %h3 Portfolio - Paintings
+    -#   .row
+    -#     - (1..6).each do |index|
+    -#       .col-md-4
+    -#         .img-container= image_tag "paintings/#{index}.jpg", class: 'img-responsive'
 
 %footer
   .container
@@ -60,6 +60,3 @@
         %li
           = links.link_to url_for('https://www.linkedin.com/pub/shuo-chen/20/807/571'), title: 'LinkedIn' do
             %i.fa.fa-linkedin-square
-        %li
-          = links.link_to url_for('https://plus.google.com/117798368047127975385?rel=author'), title: 'Google +' do
-            %i.fa.fa-google-plus-square
