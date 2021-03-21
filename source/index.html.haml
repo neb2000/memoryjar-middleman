@@ -44,19 +44,18 @@
 %footer
   .container
     %ul.list-unstyled.media-links
-      - with_options target: '_blank' do |links|
-        %li
-          = links.link_to url_for('https://www.facebook.com/neb2000'), title: 'Facebook' do
-            %i.fa.fa-facebook-square
-        %li
-          = links.link_to url_for('https://twitter.com/neb2000'), title: 'Twitter' do
-            %i.fa.fa-twitter-square
-        %li
-          = links.link_to url_for('https://www.flickr.com/photos/neb2000/'), title: 'Flickr' do
-            %i.fa.fa-flickr
-        %li
-          = links.link_to url_for('https://github.com/neb2000'), title: 'Github' do
-            %i.fa.fa-github-square
-        %li
-          = links.link_to url_for('https://www.linkedin.com/pub/shuo-chen/20/807/571'), title: 'LinkedIn' do
-            %i.fa.fa-linkedin-square
+      %li
+        = link_to url_for('https://www.facebook.com/neb2000'), title: 'Facebook', target: '_blank' do
+          %i.fa.fa-facebook-square
+      %li
+        = link_to url_for('https://twitter.com/neb2000'), title: 'Twitter', target: '_blank' do
+          %i.fa.fa-twitter-square
+      %li
+        = link_to url_for('https://www.flickr.com/photos/neb2000/'), title: 'Flickr', target: '_blank' do
+          %i.fa.fa-flickr
+      %li
+        = link_to url_for('https://github.com/neb2000'), title: 'Github', target: '_blank' do
+          %i.fa.fa-github-square
+      %li
+        = link_to url_for('https://www.linkedin.com/pub/shuo-chen/20/807/571'), title: 'LinkedIn', target: '_blank' do
+          %i.fa.fa-linkedin-square

@@ -53,11 +53,13 @@ set :js_dir, 'javascripts'
 
 set :images_dir, 'images'
 
-set :haml, { ugly: true, format: :html5 }
+set :haml, { format: :html5 }
 
 activate :google_analytics do |ga|
   ga.tracking_id = 'UA-34338110-1'
 end
+
+activate :sprockets
 
 # Build-specific configuration
 configure :build do
@@ -72,7 +74,7 @@ configure :build do
 
   # Use relative URLs
   activate :relative_assets
-  
+
   activate :gzip
   # Or use a different image path
   # set :http_prefix, "/Content/images/"
