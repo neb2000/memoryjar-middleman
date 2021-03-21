@@ -5,7 +5,7 @@ source 'https://rubygems.org'
 gem 'middleman'
 
 gem 'jquery-middleman'
-gem 'bootstrap-sass', '< 3.4'
+gem 'bootstrap-sass', '< 3.5'
 gem 'font-awesome-middleman'
 gem 'middleman-google-analytics'
 
