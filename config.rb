@@ -59,7 +59,9 @@ activate :google_analytics do |ga|
   ga.tracking_id = 'UA-34338110-1'
 end
 
-activate :sprockets
+activate :sprockets do |c|
+  c.expose_middleman_helpers = true
+end
 
 # Build-specific configuration
 configure :build do
