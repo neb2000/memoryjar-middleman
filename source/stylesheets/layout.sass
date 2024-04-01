@@ -53,6 +53,7 @@ body
         border: 3px solid rgba(255,255,255,0.3)
 
       backdrop-filter: blur($blur-radius)
+      -webkit-backdrop-filter: blur($blur-radius)
 
       h1, h2
         margin: 0
@@ -110,8 +111,14 @@ body
     font-size: 16px
     position: relative
     overflow: hidden
+
     background-color: rgba(255,255,255,.75)
     backdrop-filter: blur($blur-radius)
+    -webkit-backdrop-filter: blur($blur-radius)
+
+    @supports (-webkit-touch-callout: none)
+      -webkit-backdrop-filter: none
+      backdrop-filter: #fff
 
     @media (min-width: $screen-md-min)
       font-size: $font-size-base
