@@ -14,8 +14,8 @@
       .row
         .col-md-12
           %p Hi and welcome to my personal website!
-          %p My name is Shuo Chen, a #{link_to 'University of Sheffield', url_for('http://www.sheffield.ac.uk'), target: '_blank', title: 'Go to University of Sheffield Website'} graduate with a Master degree in Software Engineering.
-          %p I&apos;m currently working for #{link_to 'epiGenesys', url_for('http://www.epigenesys.co.uk'), title: 'epiGenesys - a University of Sheffield company', target: '_blank'} - a University of Sheffield company. I specialise in Ruby on Rails, React / Redux, jQuery, CSS and PostgresSQL.
+          %p My name is Shuo, a #{link_to 'University of Sheffield', url_for('http://www.sheffield.ac.uk'), target: '_blank', title: 'Go to University of Sheffield Website'} software engineering graduate.
+          %p I specialise in Ruby on Rails, JavaScript (React / Redux, jQuery), CSS and PostgresSQL.
           %p When I&apos;m free, I enjoy painting, travel around the country and take photos. You may have a look at my work in the profolio section or on my #{link_to 'Flickr page', url_for('https://www.flickr.com/photos/neb2000/'), target: '_blank'}.
           %p If you find yourself in need of any of my skills, please contact me via #{mail_to 'nebaries@gmail.com', 'e-mail'}, or any of the social media listed at the bottom of the page.
 
@@ -45,17 +45,8 @@
   .container
     %ul.list-unstyled.media-links
       %li
-        = link_to url_for('https://www.facebook.com/neb2000'), title: 'Facebook', target: '_blank' do
-          %i.fa.fa-facebook-square
-      %li
-        = link_to url_for('https://twitter.com/neb2000'), title: 'Twitter', target: '_blank' do
-          %i.fa.fa-twitter-square
-      %li
         = link_to url_for('https://www.flickr.com/photos/neb2000/'), title: 'Flickr', target: '_blank' do
           %i.fa.fa-flickr
       %li
         = link_to url_for('https://github.com/neb2000'), title: 'Github', target: '_blank' do
           %i.fa.fa-github-square
-      %li
-        = link_to url_for('https://www.linkedin.com/pub/shuo-chen/20/807/571'), title: 'LinkedIn', target: '_blank' do
-          %i.fa.fa-linkedin-square
