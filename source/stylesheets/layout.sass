@@ -11,8 +11,12 @@ body
   padding: 0
   background: url(image_path('background.jpg')) no-repeat center center fixed
   background-size: cover
+
   font-weight: 400
   -webkit-font-smoothing: antialiased
+
+  @supports (-webkit-touch-callout: none)
+    background-attachment: scroll
 
 
   h1, h2, h3
