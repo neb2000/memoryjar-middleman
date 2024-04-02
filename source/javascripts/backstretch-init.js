@@ -1,3 +1,3 @@
 if (/iPhone|iPad|iPod/i.test(navigator.userAgent) || (navigator.userAgent.match(/Mac/) && navigator.maxTouchPoints && navigator.maxTouchPoints > 2)) {
-  $('#banner').backstretch('<%= image_path('background.jpg')%>');
+  $('#banner').backstretch($('#banner').data('bg-url'));
 }
