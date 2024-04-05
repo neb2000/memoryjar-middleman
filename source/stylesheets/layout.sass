@@ -4,6 +4,8 @@
 $shadow-color: rgba(#000, .5)
 $blur-radius: 10px
 
+html
+  font-size: 16px
 body
   position: absolute
   height: 100%
@@ -25,12 +27,20 @@ body
     overflow: hidden
     display: flex
     align-items: center
-    justify-content: center
     flex-direction: column
     --banner-bg: rgba(255,255,255,0.3)
     --backdrop-filter: blur(#{$blur-radius})
     --text-color: #{$text-color}
-    --offset-top: -16.8%
+    --offset-top: 0
+
+    #banner-text-container
+      display: flex
+      position: fixed
+      top: 16.8%
+      left: 0
+      width: 100%
+      justify-content: center
+      margin-top: var(--offset-top);
 
     #banner-text
       background: var(--banner-bg)
@@ -39,9 +49,8 @@ body
       align-items: center
       justify-content: center
       width: 100%
-      padding: 30px
+      padding: 2rem
       color: var(--text-color)
-      margin-top: var(--offset-top);
 
       @media (min-width: $screen-md-min)
         width: auto
@@ -49,7 +58,7 @@ body
         border: 3px solid var(--banner-bg)
 
       @media (min-width: $screen-lg-min)
-        padding: 60px
+        padding: 4rem
       backdrop-filter: var(--backdrop-filter)
       -webkit-backdrop-filter: var(--backdrop-filter)
 
@@ -59,36 +68,28 @@ body
         line-height: 1
       h1
         font-weight: 300
-        font-size: 45px
-        @media (min-width: $screen-md-min)
-          font-size: 90px
-          font-weight: 100
-        @media (min-width: $screen-lg-min)
-          font-size: 120px
+        font-size: clamp(2.5rem, 7vw, 7.5rem)
         text-transform: uppercase
+        @media (min-width: $screen-md-min)
+          font-weight: 100
 
       hr
         border: none
         border-top: 1px solid var(--text-color)
         width: 100%
-        margin: 30px 0
+        margin: 2rem 0
         @media (min-width: $screen-lg-min)
-          margin: 60px 0
+          margin: 4rem 0
       h2
         font-weight: 300
-        font-size: 18px
-        @media (min-width: $screen-md-min)
-          font-size: 30px
+        font-size: clamp(1rem, 2vw, 2rem)
 
   #scroll-down
-    position: absolute
-    @media (min-width: $screen-md-min)
-      position: fixed
-    bottom: 15px
-    height: 30px
-    width: 30px
-    margin-left: -15px
-    left: 50%
+    position: relative
+    margin-top: auto
+    height: 2rem
+    width: 2rem
+    margin-bottom: 1rem
 
     &:before, &:after
       content: ''
@@ -106,8 +107,8 @@ body
 
   #content
     @include box-shadow(0 0 20px $shadow-color)
-    padding: 0 10px
-    font-size: 16px
+    padding: 0 0.5rem
+    font-size: clamp(1rem, 2vw, 1.5rem)
     position: relative
     overflow: hidden
 
@@ -120,38 +121,32 @@ body
       background-color: #fff
 
     @media (min-width: $screen-md-min)
-      font-size: $font-size-base
       padding: 0
 
-    @media (min-width: $screen-lg-min)
-      font-size: $font-size-base * 1.4
     position: relative
     z-index: 10
 
     .section
-      margin-bottom: 10px
+      margin-bottom: 1rem
       @media (min-width: $screen-md-min)
-        margin-bottom: 60px
+        margin-bottom: 4rem
       font-weight: 300
 
       h3
         text-transform: uppercase
-        font-size: 30px
+        font-size: clamp(2rem, 3vw, 4rem)
         font-weight: 300
         @media (min-width: $screen-md-min)
-          font-size: 45px
           font-weight: 100
-        @media (min-width: $screen-lg-min)
-          font-size: 45px * 1.4
-        margin-top: 30px
-        margin-bottom: 15px
+        margin-top: 2rem
+        margin-bottom: 1rem
         line-height: 1
 
       .img-container
         margin-bottom: $grid-gutter-width
 
   footer
-    padding: 0 20px
+    padding: 0 1rem
     background-color: rgba(#000,.95)
     .media-links
       position: relative
@@ -162,7 +157,7 @@ body
         font-size: 40px
       line-height: 1
       text-align: center
-      padding: 10px 0
+      padding: 1rem 0
       li
         line-height: 1
         display: inline-block
@@ -174,4 +169,4 @@ body
           text-decoration: none
           opacity: 1
       li + li
-        margin-left: 20px
+        margin-left: 1rem
