@@ -10,6 +10,7 @@
 # Ignore the build directory
 /build
 /.tmp
+/node_modules
 # Ignore cache
 /.sass-cache
 /.cache
