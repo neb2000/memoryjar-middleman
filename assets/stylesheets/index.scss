@@ -78,6 +78,7 @@ body {
       width: 100%;
       padding: 2rem;
       color: var(--text-color);
+      backdrop-filter: var(--backdrop-filter);
 
       @include media-breakpoint-up(md) {
         width: auto;
@@ -88,8 +89,6 @@ body {
       @include media-breakpoint-up(lg) {
         padding: 4rem;
       }
-
-      backdrop-filter: var(--backdrop-filter);
 
       h1, h2 {
         margin: 0;
@@ -130,7 +129,7 @@ body {
     margin-top: auto;
     height: 2rem;
     width: 2rem;
-    margin-bottom: 1rem;
+    margin-bottom: $spacer;
 
     &:before,
     &:after {
@@ -155,13 +154,12 @@ body {
 
   #content {
     box-shadow: 0 0 20px $shadow-color;
-    font-size: clamp(1rem, 2vw, 1.5rem);
     position: relative;
     overflow: hidden;
 
     padding: $spacer 0;
 
-    background-color: rgba(255, 255, 255, .75);
+    background-color: rgba(255, 255, 255, .85);
     backdrop-filter: blur($blur-radius);
 
     @supports (-webkit-touch-callout: none) {
@@ -188,15 +186,12 @@ body {
 
     .section {
       font-weight: 300;
+      font-size: clamp(1rem, 2vw, 1.5rem);
 
       h3 {
         text-transform: uppercase;
         font-size: clamp(2rem, 3vw, 4rem);
         font-weight: 300;
-
-        @include media-breakpoint-up(md) {
-          font-weight: 100;
-        }
 
         margin-bottom: 1rem;
         line-height: 1;
