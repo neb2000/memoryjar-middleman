@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3",
+    "css-loader": "^7.0.0",
+    "file-loader": "^6.2.0",
+    "jquery": "^3",
+    "jquery-backstretch": "^2.1.18",
+    "mini-css-extract-plugin": "^2.8.1",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-loader": "^8.1.1",
+    "postcss-preset-env": "^9.5.4",
+    "sass": "^1.74.1",
+    "sass-loader": "^14.1.1",
+    "webpack": "^5.91.0",
+    "webpack-assets-manifest": "^5.2.1",
+    "webpack-cli": "^5.1.4"
+  },
+  "scripts": {
+    "start": "webpack --watch --progress --color",
+    "build": "webpack --bail --mode production"
+  }
+}

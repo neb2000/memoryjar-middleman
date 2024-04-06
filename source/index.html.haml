@@ -1,5 +1,4 @@
-
-#banner{ 'data-bg-url': image_path('background.jpg') }
+#banner{ 'data-bg-url': asset_pack_path('images/background.jpg') }
   #banner-text-container
     #banner-text
       %h1 Memory Jar
@@ -12,42 +11,22 @@
   .container
     #about-me.section
       %h3 About Me
-      .row
-        .col-md-12
-          %p Hi and welcome to my personal website!
-          %p My name is Shuo, a #{link_to 'University of Sheffield', url_for('http://www.sheffield.ac.uk'), target: '_blank', title: 'Go to University of Sheffield Website'} software engineering graduate.
-          %p I specialise in Ruby on Rails, JavaScript (React / Redux, jQuery), CSS and PostgresSQL.
-          %p When I&apos;m free, I enjoy painting, travel around the country and take photos. You may have a look at my work in the profolio section or on my #{link_to 'Flickr page', url_for('https://www.flickr.com/photos/neb2000/'), target: '_blank'}.
-          %p If you find yourself in need of any of my skills, please contact me via #{mail_to 'nebaries@gmail.com', 'e-mail'}, or any of the social media listed at the bottom of the page.
+
+      %p Hi and welcome to my personal website!
+      %p My name is Shuo, a #{link_to 'University of Sheffield', url_for('http://www.sheffield.ac.uk'), target: '_blank', title: 'Go to University of Sheffield Website'} software engineering graduate.
+      %p I specialise in Ruby on Rails, JavaScript (React / Redux, jQuery), CSS and PostgresSQL. Some of my projects can be found on my #{link_to 'Github page', url_for('https://github.com/neb2000', target: '_blank')}.
+      %p When I&apos;m free, I enjoy painting, travel around the country and take photos. You may have a look at my work in the profolio section or on my #{link_to 'Flickr page', url_for('https://www.flickr.com/photos/neb2000/'), target: '_blank'}.
+      %p If you find yourself in need of any of my skills, please contact me via #{mail_to 'nebaries@gmail.com', 'e-mail'}.
 
     #portfolio-photos.section
       %h3 Portfolio - Photos
-      .row
+      .row.g-3
         - (1..9).each do |index|
-          .col-md-4
-            .img-container= image_tag "portfolio/#{index}.jpg", class: 'img-responsive'
+          .col-md-4= image_tag asset_pack_path("images/portfolio/#{index}.jpg"), class: 'img-fluid'
 
 
     #portfolio-drawings.section
       %h3 Portfolio - Drawings
-      .row
+      .row.g-3
         - (1..6).each do |index|
-          .col-md-4
-            .img-container= image_tag "drawings/#{index}.jpg", class: 'img-responsive'
-
-    -# #portfolio-paintings.section
-    -#   %h3 Portfolio - Paintings
-    -#   .row
-    -#     - (1..6).each do |index|
-    -#       .col-md-4
-    -#         .img-container= image_tag "paintings/#{index}.jpg", class: 'img-responsive'
-
-%footer
-  .container
-    %ul.list-unstyled.media-links
-      %li
-        = link_to url_for('https://www.flickr.com/photos/neb2000/'), title: 'Flickr', target: '_blank' do
-          %i.fa.fa-flickr
-      %li
-        = link_to url_for('https://github.com/neb2000'), title: 'Github', target: '_blank' do
-          %i.fa.fa-github-square
+          .col-md-4= image_tag asset_pack_path("images/drawings/#{index}.jpg"), class: 'img-fluid'
