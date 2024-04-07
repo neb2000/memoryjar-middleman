@@ -1,8 +1,5 @@
 require.context('../images', true);
 
-import 'jquery';
-import 'jquery-backstretch';
-
 const updateScroll = (force = false) => {
   const scrollPos = window.scrollY
 
@@ -17,10 +14,6 @@ const updateScroll = (force = false) => {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  if (/iPhone|iPad|iPod/i.test(navigator.userAgent) || (navigator.userAgent.match(/Mac/) && navigator.maxTouchPoints && navigator.maxTouchPoints > 2)) {
-    $('#banner').backstretch($('#banner').data('bg-url'));
-  }
-
   updateScroll(true);
 });
 

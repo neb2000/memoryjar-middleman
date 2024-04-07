@@ -30,16 +30,6 @@ html {
 }
 
 body {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  padding: 0;
-
-  @supports not (-webkit-touch-callout: none) {
-    background: url('/assets/images/background.jpg') no-repeat center center fixed;
-    background-size: cover;
-  }
-
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
 
@@ -47,8 +37,22 @@ body {
     font-family: 'Raleway', sans-serif;
   }
 
+  #background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    height: 100svh;
+    object-fit: cover;
+    z-index: 0;
+    touch-action: none;
+    pointer-events: none;
+  }
+
   #banner {
-    height: 100%;
+    height: 100vh;
+    height: 100svh;
     width: 100%;
     overflow: hidden;
     display: flex;
@@ -63,6 +67,8 @@ body {
       display: flex;
       position: fixed;
       top: 16.8%;
+      top: 16.8vh;
+      top: 16.8svh;
       left: 0;
       width: 100%;
       justify-content: center;
