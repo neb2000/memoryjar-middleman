@@ -1,4 +1,4 @@
-$font-family-sans-serif: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-sans-serif: "Open Sans", system-ui, Arial, sans-serif;
 $link-decoration: none;
 
 $text-color: rgba(0, 0, 0, 0.75);
@@ -29,8 +29,12 @@ html {
   scroll-behavior: smooth;
 }
 
+:root {
+  --scroll-progression: 1;
+  --offset-top: 0;
+}
+
 body {
-  font-weight: 400;
   -webkit-font-smoothing: antialiased;
 
   h1, h2, h3 {
@@ -43,7 +47,7 @@ body {
     left: 0;
     width: 100%;
     height: 100vh;
-    height: 100svh;
+    height: 100lvh;
     object-fit: cover;
     z-index: 0;
     touch-action: none;
@@ -58,10 +62,6 @@ body {
     display: flex;
     align-items: center;
     flex-direction: column;
-    --banner-bg: rgba(255, 255, 255, 0.3);
-    --backdrop-filter: blur(#{$blur-radius});
-    --text-color: var(--bs-text-color);
-    --offset-top: 0;
 
     #banner-text-container {
       display: flex;
@@ -76,24 +76,28 @@ body {
     }
 
     #banner-text {
-      background: var(--banner-bg);
+      background: rgba(255, 255, 255, calc(var(--scroll-progression) * 0.4));
       display: inline-flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       width: 100%;
       padding: 2rem;
-      color: var(--text-color);
-      backdrop-filter: var(--backdrop-filter);
+      color: rgba(0, 0, 0, calc(0.75 * var(--scroll-progression)));
+      backdrop-filter: blur(calc(var(--scroll-progression) * 10px));
 
       @include media-breakpoint-up(md) {
         width: auto;
         height: auto;
-        border: 3px solid var(--banner-bg);
+        box-shadow: inset 0 0 0 calc(0.5rem * var(--scroll-progression)) rgba(255, 255, 255, calc(var(--scroll-progression) * 0.4));
       }
 
       @include media-breakpoint-up(lg) {
         padding: 4rem;
+      }
+
+      & > * {
+        filter: blur(calc(15px * (1 - var(--scroll-progression))));
       }
 
       h1, h2 {
@@ -106,21 +110,13 @@ body {
         font-weight: 300;
         font-size: clamp(3rem, 7vw, 7.5rem);
         text-transform: uppercase;
-
-        @include media-breakpoint-up(md) {
-          font-weight: 100;
-        }
       }
 
       hr {
         border: none;
-        border-top: 1px solid var(--text-color);
+        border-top: 1px solid rgba(0, 0, 0, calc(0.75 * var(--scroll-progression)));
         width: 100%;
         margin: 2rem 0;
-
-        @include media-breakpoint-up(lg) {
-          margin: 4rem 0;
-        }
       }
 
       h2 {
@@ -133,45 +129,25 @@ body {
   #scroll-down {
     position: relative;
     margin-top: auto;
-    height: 2rem;
-    width: 2rem;
     margin-bottom: $spacer;
-
-    &:before,
-    &:after {
-      content: '';
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      border: 1px solid var(--banner-bg);
-      background-color: var(--banner-bg);
-    }
-
-    &:before {
-      right: 4px;
-      transform: rotate(45deg);
-    }
-
-    &:after {
-      left: 4px;
-      transform: rotate(-45deg);
+    top: var(--offset-top);
+    svg {
+      height: 2.5rem;
+      width: 2.5rem;
+      fill: rgba(255, 255, 255, calc(var(--scroll-progression) * 0.8));
     }
   }
 
   #content {
-    box-shadow: 0 0 20px $shadow-color;
     position: relative;
     overflow: hidden;
 
     padding: $spacer 0;
 
-    background-color: rgba(255, 255, 255, .85);
-    backdrop-filter: blur($blur-radius);
-
-    @supports (-webkit-touch-callout: none) {
-      -webkit-backdrop-filter: none;
-      background-color: #fff;
-    }
+    background-color: rgba(255, 255, 255, calc(0.95 * (1 - var(--scroll-progression))));
+    backdrop-filter:
+      blur(calc(10px * (1 - var(--scroll-progression))))
+      saturate(0.75);
 
     @include media-breakpoint-up(md) {
       padding: $spacer * 2 0;
@@ -196,8 +172,8 @@ body {
 
       h3 {
         text-transform: uppercase;
-        font-size: clamp(2rem, 3vw, 4rem);
-        font-weight: 300;
+        font-size: clamp(1.5rem, 3vw, 4rem);
+        font-weight: 400;
 
         margin-bottom: 1rem;
         line-height: 1;

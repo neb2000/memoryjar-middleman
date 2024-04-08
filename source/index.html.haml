@@ -7,6 +7,8 @@
       %h2 Photography and web development
 
   %a#scroll-down.scroll{ href: '#content' }
+    %svg(xmlns="http://www.w3.org/2000/svg" class="bi bi-chevron-down" viewBox="0 0 16 16")
+      %path(fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708")
 
 #content
   .container
@@ -21,13 +23,13 @@
 
     #portfolio-photos.section
       %h3 Portfolio - Photos
-      .row.g-3
-        - (1..9).each do |index|
+      .row.g-2.g-md-3
+        - (1..6).each do |index|
           .col-md-4= image_tag asset_pack_path("images/portfolio/#{index}.jpg"), class: 'img-fluid'
 
 
     #portfolio-drawings.section
       %h3 Portfolio - Drawings
-      .row.g-3
+      .row.g-2.g-md-3
         - (1..6).each do |index|
-          .col-md-4= image_tag asset_pack_path("images/drawings/#{index}.jpg"), class: 'img-fluid'
+          .col-md-2= image_tag asset_pack_path("images/drawings/#{index}.jpg"), class: 'img-fluid'
