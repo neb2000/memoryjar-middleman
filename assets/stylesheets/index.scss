@@ -141,7 +141,7 @@ body {
 
     padding: $spacer 0;
 
-    background-color: rgba(255, 255, 255, calc(0.95 * (1 - var(--scroll-progression))));
+    background-color: rgba(255, 255, 255, min(calc(0.95 * (1 - var(--scroll-progression)) * 3), 0.95));
     backdrop-filter:
       blur(calc(10px * (1 - var(--scroll-progression))))
       saturate(0.75);
